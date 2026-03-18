@@ -51,10 +51,6 @@ const defaultSimFields = [
     description: "Reaction to User (0=Neutral, 1=Like, 2=Dislike)",
   },
   {
-    key: "internal_thought",
-    description: "Character's current internal thoughts/feelings",
-  },
-  {
     key: "days_since_first_meeting",
     description: "Total days since first meeting",
   },
@@ -85,7 +81,6 @@ const default_settings = {
   isEnabled: true,
   codeBlockIdentifier: "sim",
   defaultBgColor: "#6a5acd",
-  showThoughtBubble: true,
   customTemplateHtml: "",
   templateFile: "bento-style-tracker.json", // Changed to JSON file
   templatePosition: "BOTTOM", // Default template position
@@ -283,7 +278,6 @@ const initialize_settings_listeners = (
   bind_setting("#isEnabled", "isEnabled", "boolean");
   bind_setting("#codeBlockIdentifier", "codeBlockIdentifier", "text");
   bind_setting("#defaultBgColor", "defaultBgColor", "color");
-  bind_setting("#showThoughtBubble", "showThoughtBubble", "boolean");
   bind_setting("#hideSimBlocks", "hideSimBlocks", "boolean");
   bind_setting("#trackerFormat", "trackerFormat", "text");
   bind_setting("#datingSimPrompt", "datingSimPrompt", "textarea");
@@ -1152,7 +1146,6 @@ const handlePresetExport = (loadTemplate, refreshAllCards) => {
         preset.extSettings = {
           codeBlockIdentifier: get_settings("codeBlockIdentifier"),
           defaultBgColor: get_settings("defaultBgColor"),
-          showThoughtBubble: get_settings("showThoughtBubble"),
           hideSimBlocks: get_settings("hideSimBlocks"),
           templateFile: get_settings("templateFile"),
         };

@@ -502,6 +502,7 @@ jQuery(async () => {
         exampleYaml += "  current_time: \"[CURRENT_STORY_TIME]\"  # 24-hour time (e.g., 21:34, 10:21)\n";
         exampleYaml += "  user_outfit: \"[USER_OUTFIT_DESCRIPTION]\"  # {{user}}'s current outfit\n";
         exampleYaml += "  user_position: \"[USER_POSITION]\"  # {{user}}'s current position/pose\n";
+        exampleYaml += "  user_location: \"[USER_LOCATION]\"  # {{user}}'s current location\n";
         exampleYaml += "characters:\n";
         exampleYaml += "  - name: \"[CHARACTER_NAME]\"\n";
 
@@ -522,7 +523,8 @@ jQuery(async () => {
         exampleJson += "    \"current_date\": \"[CURRENT_STORY_DATE]\", // YYYY-MM-DD\n";
         exampleJson += "    \"current_time\": \"[CURRENT_STORY_TIME]\", // 24-hour time (e.g., 21:34, 10:21)\n";
         exampleJson += "    \"user_outfit\": \"[USER_OUTFIT_DESCRIPTION]\", // {{user}}'s current outfit\n";
-        exampleJson += "    \"user_position\": \"[USER_POSITION]\" // {{user}}'s current position/pose\n";
+        exampleJson += "    \"user_position\": \"[USER_POSITION]\", // {{user}}'s current position/pose\n";
+        exampleJson += "    \"user_location\": \"[USER_LOCATION]\" // {{user}}'s current location\n";
         exampleJson += "  },\n";
         exampleJson += "  \"characters\": [\n";
         exampleJson += "    {\n";

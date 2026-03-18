@@ -1550,6 +1550,9 @@ const renderTracker = (mesId, get_settings, compiledWrapperTemplate, compiledCar
 
       const currentDate = worldData.current_date || "Unknown Date";
       const currentTime = worldData.current_time || "Unknown Time";
+      const userOutfit = worldData.user_outfit || null;
+      const userPosition = worldData.user_position || null;
+      const userLocation = worldData.user_location || null;
 
       if (!characterList.length) return;
 
@@ -1581,13 +1584,12 @@ const renderTracker = (mesId, get_settings, compiledWrapperTemplate, compiledCar
               characterName: name,
               currentDate: currentDate,
               currentTime: currentTime,
+              userOutfit: userOutfit,
+              userPosition: userPosition,
+              userLocation: userLocation,
               stats: {
                 ...stats,
                 ...changes,
-                internal_thought:
-                  stats.internal_thought ||
-                  stats.thought ||
-                  "No thought recorded.",
                 relationshipStatus:
                   stats.relationshipStatus || "Unknown Status",
                 desireStatus: stats.desireStatus || "Unknown Desire",
@@ -1599,7 +1601,6 @@ const renderTracker = (mesId, get_settings, compiledWrapperTemplate, compiledCar
               reactionEmoji: getReactionEmoji(stats.last_react),
               healthIcon:
                 stats.health === 1 ? "🤕" : stats.health === 2 ? "💀" : null,
-              showThoughtBubble: get_settings("showThoughtBubble"),
             };
           })
           .filter(Boolean); // Remove any null entries
@@ -1609,6 +1610,9 @@ const renderTracker = (mesId, get_settings, compiledWrapperTemplate, compiledCar
           characters: charactersData,
           currentDate: currentDate,
           currentTime: currentTime,
+          userOutfit: userOutfit,
+          userPosition: userPosition,
+          userLocation: userLocation,
         };
         
         // Execute bundled template logic if it exists
@@ -1632,13 +1636,12 @@ const renderTracker = (mesId, get_settings, compiledWrapperTemplate, compiledCar
               characterName: name,
               currentDate: currentDate,
               currentTime: currentTime,
+              userOutfit: userOutfit,
+              userPosition: userPosition,
+              userLocation: userLocation,
               stats: {
                 ...stats,
                 ...changes,
-                internal_thought:
-                  stats.internal_thought ||
-                  stats.thought ||
-                  "No thought recorded.",
                 relationshipStatus:
                   stats.relationshipStatus || "Unknown Status",
                 desireStatus: stats.desireStatus || "Unknown Desire",
@@ -1650,7 +1653,6 @@ const renderTracker = (mesId, get_settings, compiledWrapperTemplate, compiledCar
               reactionEmoji: getReactionEmoji(stats.last_react),
               healthIcon:
                 stats.health === 1 ? "🤕" : stats.health === 2 ? "💀" : null,
-              showThoughtBubble: get_settings("showThoughtBubble"),
             };
             
             // Execute bundled template logic if it exists
@@ -1891,6 +1893,9 @@ const renderTrackerWithoutSim = (mesId, get_settings, compiledWrapperTemplate, c
 
       const currentDate = worldData.current_date || "Unknown Date";
       const currentTime = worldData.current_time || "Unknown Time";
+      const userOutfit = worldData.user_outfit || null;
+      const userPosition = worldData.user_position || null;
+      const userLocation = worldData.user_location || null;
 
       if (!characterList.length) return;
 
@@ -1922,13 +1927,12 @@ const renderTrackerWithoutSim = (mesId, get_settings, compiledWrapperTemplate, c
               characterName: name,
               currentDate: currentDate,
               currentTime: currentTime,
+              userOutfit: userOutfit,
+              userPosition: userPosition,
+              userLocation: userLocation,
               stats: {
                 ...stats,
                 ...changes,
-                internal_thought:
-                  stats.internal_thought ||
-                  stats.thought ||
-                  "No thought recorded.",
                 relationshipStatus:
                   stats.relationshipStatus || "Unknown Status",
                 desireStatus: stats.desireStatus || "Unknown Desire",
@@ -1940,7 +1944,6 @@ const renderTrackerWithoutSim = (mesId, get_settings, compiledWrapperTemplate, c
               reactionEmoji: getReactionEmoji(stats.last_react),
               healthIcon:
                 stats.health === 1 ? "🤕" : stats.health === 2 ? "💀" : null,
-              showThoughtBubble: get_settings("showThoughtBubble"),
             };
           })
           .filter(Boolean); // Remove any null entries
@@ -1950,6 +1953,9 @@ const renderTrackerWithoutSim = (mesId, get_settings, compiledWrapperTemplate, c
           characters: charactersData,
           currentDate: currentDate,
           currentTime: currentTime,
+          userOutfit: userOutfit,
+          userPosition: userPosition,
+          userLocation: userLocation,
         };
         
         // Execute bundled template logic if it exists
@@ -1973,13 +1979,12 @@ const renderTrackerWithoutSim = (mesId, get_settings, compiledWrapperTemplate, c
               characterName: name,
               currentDate: currentDate,
               currentTime: currentTime,
+              userOutfit: userOutfit,
+              userPosition: userPosition,
+              userLocation: userLocation,
               stats: {
                 ...stats,
                 ...changes,
-                internal_thought:
-                  stats.internal_thought ||
-                  stats.thought ||
-                  "No thought recorded.",
                 relationshipStatus:
                   stats.relationshipStatus || "Unknown Status",
                 desireStatus: stats.desireStatus || "Unknown Desire",
@@ -1991,7 +1996,6 @@ const renderTrackerWithoutSim = (mesId, get_settings, compiledWrapperTemplate, c
               reactionEmoji: getReactionEmoji(stats.last_react),
               healthIcon:
                 stats.health === 1 ? "🤕" : stats.health === 2 ? "💀" : null,
-              showThoughtBubble: get_settings("showThoughtBubble"),
             };
             
             // Execute bundled template logic if it exists
